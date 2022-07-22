@@ -3,6 +3,7 @@ const inquirer = require('inquirer');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
+const GenerateDist = require('./lib/GenerateDist');
 
 //employee list array
 const empArr = [];
@@ -43,6 +44,7 @@ const addManager = () => {
             //check if to add another employee
             if(res.new === 'Engineer') addEngineer();
             else if(res.new === 'Intern') addIntern();
+            else new GenerateDist(empArr).genHTML();
         })
 };
 
@@ -82,6 +84,7 @@ const addEngineer = () => {
             //check if to add another employee
             if(res.new === 'Engineer') addEngineer();
             else if(res.new === 'Intern') addIntern();
+            else new GenerateDist(empArr).genHTML();
         })
 };
 
@@ -121,6 +124,7 @@ const addIntern = () => {
             //check if to add another employee
             if(res.new === 'Engineer') addEngineer();
             else if(res.new === 'Intern') addIntern();
+            else new GenerateDist(empArr).genHTML();
         })
 };
 
