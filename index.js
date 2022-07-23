@@ -28,7 +28,7 @@ const addManager = () => {
             },
             {
                 type: 'input',
-                name: 'officeNum',
+                name: 'unique',
                 message: 'Enter Office Number: ',
             },
             {
@@ -38,8 +38,7 @@ const addManager = () => {
                 choices: ['Engineer', 'Intern', 'Finish'],
             }
         ]).then((res) => {
-            empArr.push(new Manager(res.name, res.id, res.email, res.officeNum));
-            console.log(empArr);
+            empArr.push(new Manager(res.name, res.id, res.email, res.unique));
 
             //check if to add another employee
             if(res.new === 'Engineer') addEngineer();
@@ -68,8 +67,8 @@ const addEngineer = () => {
             },
             {
                 type: 'input',
-                name: 'github',
-                message: 'Enter Employee GitHub: ',
+                name: 'unique',
+                message: 'Enter Employee GitHub Username: ',
             },
             {
                 type: 'list',
@@ -78,8 +77,7 @@ const addEngineer = () => {
                 choices: ['Engineer', 'Intern', 'Finish'],
             }
         ]).then((res) => {
-            empArr.push(new Engineer(res.name, res.id, res.email, res.github));
-            console.log(empArr);
+            empArr.push(new Engineer(res.name, res.id, res.email, res.unique));
 
             //check if to add another employee
             if(res.new === 'Engineer') addEngineer();
@@ -108,7 +106,7 @@ const addIntern = () => {
             },
             {
                 type: 'input',
-                name: 'school',
+                name: 'unique',
                 message: 'Enter School: ',
             },
             {
@@ -118,8 +116,7 @@ const addIntern = () => {
                 choices: ['Engineer', 'Intern', 'Finish'],
             }
         ]).then((res) => {
-            empArr.push(new Intern(res.name, res.id, res.email, res.school));
-            console.log(empArr);
+            empArr.push(new Intern(res.name, res.id, res.email, res.unique));
 
             //check if to add another employee
             if(res.new === 'Engineer') addEngineer();
